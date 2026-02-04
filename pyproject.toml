@@ -1,0 +1,8 @@
+[project]
+name = "clemooling-zone-template"
+version = "0.0.1"
+description = "Python script tools for the website."
+requires-python = ">=3.11"
+dependencies = [
+    "ruamel-yaml>=0.19.1",
+]

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i18n:website.title</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; }
+        .card { cursor: pointer; }
+        .card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+        .card-inactive { cursor: pointer; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <nav class="container mx-auto px-6 py-6">
+        <a href="/" class="flex items-center space-x-2 text-xl font-bold hover:text-blue-400 transition-colors inline-flex">
+            <span>🏠</span>
+            <span>i18n:website.name</span>
+        </a>
+    </nav>
+
+    <main class="flex-grow container mx-auto px-6 py-10">
+        <header class="text-center mb-16">
+            <h1 class="text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400">
+                i18n:page.title
+            </h1>
+            <p class="text-slate-400 text-lg">i18n:page.description</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div onclick="window.location.href='/location_api/'" class="card bg-slate-800 p-8 rounded-2xl border border-slate-700 shadow-xl">
+                <div class="flex items-center mb-4">
+                    <span class="text-3xl mr-3">📍</span>
+                    <h2 class="text-2xl font-bold">i18n:card_1</h2>
+                </div>
+                <p class="text-slate-400 mb-6"></p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="/location_api/zh_CN/" onclick="event.stopPropagation()" class="text-blue-400 hover:text-blue-300 font-medium text-sm">中文（简体） →</a>
+                    <a href="/location_api/en_US/" onclick="event.stopPropagation()" class="text-slate-500 hover:text-slate-400 font-medium text-sm">English →</a>
+                    <a class="text-emerald-400 hover:text-emerald-300 font-medium text-sm">i18n:auto_select</a>
+                </div>
+            </div>
+
+            <div onclick="window.location.href='env:url_for_sharing'" class="card-inactive bg-slate-800/50 p-8 rounded-2xl border border-slate-700/50 border-dashed flex flex-col items-center justify-center text-slate-500">
+                <span class="text-3xl mb-2">🏗</span>
+                <p>i18n:card_more</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-10 text-center text-slate-500 text-sm border-t border-slate-800">
+        <div class="mb-4">
+            env:copyright
+        </div>
+
+        <div class="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-6 text-slate-400">
+            <a href="https://beian.miit.gov.cn/" target="_blank" class="hover:text-blue-400 transition-colors">
+                env:icp_code
+            </a>
+
+            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=env:psb_filing.recordcode" target="_blank" class="flex items-center hover:text-blue-400 transition-colors">
+                <img src="https://www.beian.gov.cn/img/ghs.png" class="w-4 h-4 mr-1" alt="公网安备图标">
+                <span>env:psb_filing.displaycode</span>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

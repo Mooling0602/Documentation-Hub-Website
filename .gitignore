@@ -1,0 +1,9 @@
+*.yml
+index.html
+index.en_US.html
+index.zh_CN.html
+.idea/
+.venv/
+lang/
+__pycache__/
+uv.lock
