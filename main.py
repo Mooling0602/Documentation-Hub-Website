@@ -1,4 +1,5 @@
 import runtime
+import shutil
 import sys
 
 from pathlib import Path
@@ -41,7 +42,7 @@ def on_user_input() -> str:
     HTML_COPIED_FILE = Path(HTML_COPIED_FILE_NAME)
     if Path(HTML_COPIED_FILE_NAME).exists():
         print("WARN: You will overriding a present HTML file!")
-    HTML_TEMPLATE_FILE.copy(target=HTML_COPIED_FILE)
+    shutil.copy(HTML_TEMPLATE_FILE, HTML_COPIED_FILE)
     return user_input
 
 
@@ -67,4 +68,4 @@ if __name__ == "__main__":
     user_input = input("Rename to `index.html`? (N/y)")
     if user_input:
         if user_input.lower() == "y" or user_input.lower() == "yes":
-            HTML_COPIED_FILE.move(HTML_COPIED_FILE.parent / "index.html")
+            shutil.move(HTML_COPIED_FILE, HTML_COPIED_FILE.parent / "index.html")
